@@ -1,0 +1,54 @@
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+   <div class="sm:mx-auto sm:w-full sm:max-w-sm pt-1 md:pt-6 lg:pt-10">
+      <img class="mx-auto h-14 md:h-24 lg:h-36 w-auto" src="../../../assets/Bioruta_logo.jpg" alt="BioRuta logo">
+      <h2 class="flex justify-center mt-5 font-semibold">Registro</h2>
+   </div>
+
+   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm pt-1 md:pt-5 lg:pt-20">
+
+      <form class="space-y-6" action="#" method="POST">
+         <div>
+
+            <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Nombre</label>
+            <div class="mt-2">
+               <input id="name" name="text" type="text" required
+                  class="block w-full rounded-full border-0 py-3 bg-gray-200 p-4  text-gray-900 ring-1 ring-inset ring-transparent placeholder:text-gray-400 focus:ring-gray-00 sm:text-sm sm:leading-6">
+            </div>
+            <div>
+               <label for="email" class="block text-sm font-medium leading-6 text-gray-900 mt-3">Correo electrónico</label>
+               <div class="mt-2">
+                  <input id="email" name="email" type="email" autocomplete="email" required
+                     class="block w-full rounded-full border-0 py-3 bg-gray-200 p-4  text-gray-900 ring-1 ring-inset ring-transparent placeholder:text-gray-400 focus:ring-gray-00 sm:text-sm sm:leading-6">
+               </div>
+            </div>
+
+            <label for="Direccion" class="block text-sm font-medium leading-6 text-gray-900 mt-3">Dirección</label>
+            <div class="mt-2">
+               <input id="Direccion" name="text" type="text" required
+                  class="block w-full rounded-full border-0 py-3 bg-gray-200 p-4  text-gray-900 ring-1 ring-inset ring-transparent placeholder:text-gray-400 focus:ring-gray-00 sm:text-sm sm:leading-6">
+            </div>
+
+            <label for="password" class="block text-sm font-medium leading-6 text-gray-900 mt-3">Contraseña</label>
+            <div class="mt-2">
+               <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-full border-0 py-3 bg-gray-200 pl-4 text-gray-900 ring-1 ring-inset ring-transparent
+          placeholder:text-gray-400 focus:ring-gray-00 sm:text-sm sm:leading-6">
+            </div>
+
+            <label for="password2" class="block text-sm font-medium leading-6 text-gray-900 mt-3">Confirmar
+               contraseña</label>
+            <div class="mt-2">
+               <input id="password2" name="password2" type="password" required
+                  class="block w-full rounded-full border-0 py-3 bg-gray-200 pl-4 text-gray-900 ring-1 ring-inset ring-transparent placeholder:text-gray-400 focus:ring-gray-00 sm:text-sm sm:leading-6">
+            </div>
+
+
+         </div>
+
+         <div class="flex justify-center pt-3 md:pt-6 lg:pt-10">
+            <button type="submit"
+               class="flex w-1/2 justify-center rounded-lg text-white bg-lime-600 px-4 py-3 md:py-3 text-lg leading-6 shadow-sm hover:bg-lime-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Registrarse</button>
+         </div>
+
+      </form>
+   </div>
+</div>
