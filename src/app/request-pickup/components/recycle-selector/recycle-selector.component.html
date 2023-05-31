@@ -1,22 +1,22 @@
-<app-new-material-component [isOpen]="newMaterialModal"></app-new-material-component>
+<div class="px-6 py-9 flex overflow-y-hidden overflow-x-auto relative z-0">
 
-<div class="px-6 py-9 flex overflow-auto relative">
-   <div (click)="openModal()">
-      <div class="bg-lime-500 p-5 inset-0 w-28 h-32 block rounded-lg mx-2 shrink-0">
-         <div class="flex justify-center">
-            <img class="h-16 w-16 object-center" src="../../../../assets/placeholder.png" alt="Placeholder">
-         </div>
-         <div class="text-sm text-center mt-2">Papel</div>
+
+   <ng-template ngIf="materials">
+      <div *ngFor="let material of materials">
+         <app-material [currentMaterial]="material"></app-material>
       </div>
-      <div class="bg-lime-300 w-28 h-40 rounded-lg absolute top-9 left-8 z-[-1]">
-         <div class="inset-x-0 bottom-2 absolute text-center text-sm">
-            5kg
+   </ng-template>
+   
+
+
+   <div *ngIf="!(materials) || materials?.length != 3">
+      <div (click)="openModal()" class="flex w-28 h-32">
+         <div class="flex h-full w-full bg-gray-200 justify-center items-center rounded-lg">
+            <img class="object-fill object-center h-24 w-24" src="../../../../assets/placeholder.png" alt="Placeholder">
          </div>
       </div>
    </div>
-   <div class="flex w-28 h-32">
-      <div class="flex h-full w-full bg-gray-200 justify-center items-center rounded-lg">
-         <img class="object-fill object-center h-24 w-24" src="../../../../assets/placeholder.png" alt="Placeholder">
-      </div>
-   </div>
+   
 </div>
+
+<app-new-material-component [material]="addNewMaterial()" [isOpen]="newMaterialModal" (newMaterialEvent)="addMaterialToMaterials($event)"></app-new-material-component>

@@ -8,6 +8,6 @@
             class="block w-full rounded-full border-0 py-3 bg-gray-200 p-4  text-gray-900 ring-1 ring-inset ring-transparent placeholder:text-gray-400 focus:ring-gray-00 sm:text-sm sm:leading-6">
       </div>
 
-      <app-recycle-selector></app-recycle-selector>
+      <app-recycle-selector (materialSelectorEvent)="addMaterials($event)"></app-recycle-selector>
    </form>
 </div>

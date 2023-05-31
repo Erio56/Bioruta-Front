@@ -1,4 +1,6 @@
-import { Component, Input, ElementRef, Renderer2, AfterViewInit, OnDestroy, HostListener, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { EventManager } from '@angular/platform-browser';
+import { Material } from 'src/app/request-pickup/models/material';
 
 @Component({
   selector: 'app-new-material-component',
@@ -6,20 +8,19 @@ import { Component, Input, ElementRef, Renderer2, AfterViewInit, OnDestroy, Host
 })
 export class NewMaterialComponent {
 
-  public material = { 
-    materialType: '', 
-    weight: '', 
-    height: '',
-    with: ''
-  };
-
-
   @Input() isOpen: boolean = false;
-  @Output() newItemEvent = new EventEmitter<boolean>();
-  
+  @Input() material:Material= {
+    materialType:'',
+    height:0,
+    weight:0,
+    width:0
+  };
+  @Output() newMaterialEvent= new EventEmitter<object>();
+
 
   close() {
     this.isOpen = false;
-    this.newItemEvent.emit(false);
+    this.newMaterialEvent.emit(this.material);
+    console.log(this.material);
   }
 } 

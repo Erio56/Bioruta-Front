@@ -7,6 +7,8 @@ import { RecycleSelectorComponent } from './components/recycle-selector/recycle-
 import { AddressSelectorComponent } from './components/address-selector/address-selector.component';
 import { AddressRegisterComponent } from './components/address-register/address-register.component';
 import { NewMaterialComponent } from './components/modals/new-material/new-material.component';
+import { FormsModule } from '@angular/forms';
+import { MaterialComponent } from './components/material/material.component';
 
 
 
@@ -17,11 +19,13 @@ import { NewMaterialComponent } from './components/modals/new-material/new-mater
     RecycleSelectorComponent,
     AddressSelectorComponent,
     AddressRegisterComponent,
-    NewMaterialComponent
+    NewMaterialComponent,
+    MaterialComponent,
   ],
   imports: [
     CommonModule,
-    HomeModule
+    HomeModule,
+    FormsModule
   ],
   exports:[
     RequestPickupPageComponent

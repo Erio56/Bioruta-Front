@@ -14,14 +14,16 @@ export class AuthService{
   }
 
   private user:User = {};
-  private _TOKEN: any = {};
+  private TOKEN: Token = {};
 
 
   login(): boolean {
     this.loginRequest('felipe@felipe.com', 'epaepaepa').subscribe((data)=>{
       localStorage.setItem('access', (data as any).refresh);
-    });
-    if(this._TOKEN !== null){
+      }
+    );
+
+    if(this.TOKEN !== null){
       return true
     }else{
       return false;
@@ -39,11 +41,6 @@ export class AuthService{
     header.append('Content-Type','aplication/json');
 
     return this.http.post<Token>(url,body);
-  }
-
-
-  getUserDataRequest(){
-
   }
 
 
