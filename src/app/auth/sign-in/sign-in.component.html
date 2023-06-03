@@ -6,35 +6,40 @@
 
    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm pt-1 md:pt-5 lg:pt-20">
 
-      <form class="space-y-6" action="#" method="POST">
+      <form []  class="space-y-6" >
          <div>
 
-            <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Nombre</label>
+            <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Nombres</label>
             <div class="mt-2">
-               <input id="name" name="text" type="text" required
+               <input formControlName="name" id="name" name="text" type="text" required
+                  class="block w-full rounded-full border-0 py-3 bg-gray-200 p-4  text-gray-900 ring-1 ring-inset ring-transparent placeholder:text-gray-400 focus:ring-gray-00 sm:text-sm sm:leading-6">
+            </div>
+            <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Apellidos</label>
+            <div class="mt-2">
+               <input formControlName="lastName" id="lastName" name="text" type="text" required
                   class="block w-full rounded-full border-0 py-3 bg-gray-200 p-4  text-gray-900 ring-1 ring-inset ring-transparent placeholder:text-gray-400 focus:ring-gray-00 sm:text-sm sm:leading-6">
             </div>
             <div>
                <label for="email" class="block text-sm font-medium leading-6 text-gray-900 mt-3">Correo electrónico</label>
                <div class="mt-2">
-                  <input id="email" name="email" type="email" autocomplete="email" required
+                  <input formControlName="email" id="email" name="email" type="email" autocomplete="email" required
                      class="block w-full rounded-full border-0 py-3 bg-gray-200 p-4  text-gray-900 ring-1 ring-inset ring-transparent placeholder:text-gray-400 focus:ring-gray-00 sm:text-sm sm:leading-6">
                </div>
             </div>
 
-            <label for="Direccion" class="block text-sm font-medium leading-6 text-gray-900 mt-3">Dirección</label>
+            <label  for="Direccion" class="block text-sm font-medium leading-6 text-gray-900 mt-3">Dirección</label>
             <div class="mt-2">
-               <input id="Direccion" name="text" type="text" required
+               <input formControlName="address" id="Direccion" name="text" type="text" required
                   class="block w-full rounded-full border-0 py-3 bg-gray-200 p-4  text-gray-900 ring-1 ring-inset ring-transparent placeholder:text-gray-400 focus:ring-gray-00 sm:text-sm sm:leading-6">
             </div>
 
-            <label for="password" class="block text-sm font-medium leading-6 text-gray-900 mt-3">Contraseña</label>
+            <label formControlName="password1" for="password" class="block text-sm font-medium leading-6 text-gray-900 mt-3">Contraseña</label>
             <div class="mt-2">
                <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-full border-0 py-3 bg-gray-200 pl-4 text-gray-900 ring-1 ring-inset ring-transparent
           placeholder:text-gray-400 focus:ring-gray-00 sm:text-sm sm:leading-6">
             </div>
 
-            <label for="password2" class="block text-sm font-medium leading-6 text-gray-900 mt-3">Confirmar
+            <label ormControlName="password1" for="password2" class="block text-sm font-medium leading-6 text-gray-900 mt-3">Confirmar
                contraseña</label>
             <div class="mt-2">
                <input id="password2" name="password2" type="password" required

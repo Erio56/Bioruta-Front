@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './home/home.module';
 import { TrackingModule } from './tracking/tracking.module';
 import { RequestPickupModule } from './request-pickup/request-pickup.module';
+import { AutorizationInterceptorInterceptor } from './interceptors/autorization-interceptor.interceptor';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -29,11 +31,18 @@ import { RequestPickupModule } from './request-pickup/request-pickup.module';
       registrationStrategy: 'registerWhenStable:30000'
     }),
     HttpClientModule,
-
+    FormsModule,
+    ReactiveFormsModule
 
     
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AutorizationInterceptorInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

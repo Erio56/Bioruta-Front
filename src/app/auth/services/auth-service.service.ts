@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../models/mock/user';
 import { userMock } from '../models/mock/userMockLogin'
 import { Token } from '../models/mock/token'
+import { StorageService } from './storage-service.service';
+import { Subject } from 'rxjs';
 
 
 @Injectable({
@@ -10,42 +12,41 @@ import { Token } from '../models/mock/token'
 })
 export class AuthService{
 
-  constructor(private http: HttpClient) {
-  }
+  IsAuth: boolean = false;
+  private authSource = new Subject<boolean>();
+  public authChange = this.authSource.asObservable();
 
-  private user:User = {};
-  private TOKEN: Token = {};
-
-
-  login(): boolean {
-    this.loginRequest('felipe@felipe.com', 'epaepaepa').subscribe((data)=>{
-      localStorage.setItem('access', (data as any).refresh);
-      }
-    );
-
-    if(this.TOKEN !== null){
-      return true
-    }else{
-      return false;
+  constructor(private storageService: StorageService, private http: HttpClient) {
+    if(this.storageService.GetToken("IsAuth") !== '' && this.storageService.GetToken("AuthUserToken") !== ''){
+      this.IsAuth = this.storageService.GetToken("IsAuth") == 'true';
+      this.authSource.next(true);
     }
   }
 
-  loginRequest(email:string, password:string){
-    let url = 'http://localhost:8000/api/v1/user/token/';
-    let header = new HttpHeaders();
-    let body = {
-      email: email,
-      password: password
-    };
-
-    header.append('Content-Type','aplication/json');
-
-    return this.http.post<Token>(url,body);
+  public GetToken(){
+    return this.storageService.GetToken("AuthUserToken");
   }
 
+  public SetToken(value: any){
+    this.storageService.SetToken("AuthUserToken", value);
+    this.IsAuth = true;
+    this.storageService.SetToken("IsAuth", this.IsAuth);
+    this.authSource.next(this.IsAuth);
+  }
 
-  get token():string{
-    return this.token
+  public ResetToken(){
+    this.storageService.SetToken("AuthUserToken", "");
+    this.IsAuth = false;
+    this.storageService.SetToken("IsAuth", this.IsAuth);
+    this.authSource.next(this.IsAuth);
+  }
+
+  public LogOut(){
+    this.ResetToken();
+  }
+
+  public requestLogin(){
+    this.http.post<User>()
   }
 
 
