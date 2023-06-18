@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { HomePageComponent } from './home/home-page/home-page.component';
-import { authGuard } from './auth/services/auth-guard.service';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
+import { authGuard } from './auth/guards/auth-guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },

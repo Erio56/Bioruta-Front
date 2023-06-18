@@ -9,8 +9,9 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './home/home.module';
 import { TrackingModule } from './tracking/tracking.module';
 import { RequestPickupModule } from './request-pickup/request-pickup.module';
-import { AutorizationInterceptorInterceptor } from './interceptors/autorization-interceptor.interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { AutorizationInterceptorInterceptor } from './interceptors/autorization-interceptor.interceptor';
 
 
 @NgModule({
@@ -32,8 +33,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     }),
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    RouterModule
     
   ],
   providers: [

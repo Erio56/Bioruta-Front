@@ -5,46 +5,38 @@
 
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm pt-8 md:pt-5 lg:pt-20">
 
-    <form class="space-y-6" action="#" method="POST">
+    <form class="space-y-6" [formGroup]="loginForm">
       <div>
-
         <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Correo electrónico</label>
         <div class="mt-2">
-          <input id="email" name="email" type="email" autocomplete="email" required
+          <input formControlName="email" id="email" name="email" type="email" autocomplete="email" required 
             class="block w-full rounded-full border-0 py-3 bg-gray-200 p-4  text-gray-900 ring-1 ring-inset ring-transparent placeholder:text-gray-400 focus:ring-gray-00 sm:text-sm sm:leading-6">
         </div>
-
       </div>
-
       <div>
-
         <div class="flex items-center justify-between">
-
           <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Contraseña</label>
 
-          <div class="text-sm">
+          <!-- <div class="text-sm">
             <a href="#" class="font-semibold text-lime-600 hover:text-lime-300">¿Olvidó su contraseña?</a>
-          </div>
+          </div> -->
 
         </div>
-
         <div class="mt-2">
-          <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-full border-0 py-3 bg-gray-200 pl-4 text-gray-900 ring-1 ring-inset ring-transparent
+          <input formControlName="password" id="password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-full border-0 py-3 bg-gray-200 pl-4 text-gray-900 ring-1 ring-inset ring-transparent
            placeholder:text-gray-400 focus:ring-gray-00 sm:text-sm sm:leading-6">
         </div>
-
       </div>
-
       <div class="flex justify-center pt-3 md:pt-6 lg:pt-10">
-        <button type="submit"
-          class="flex w-1/2 justify-center rounded-lg text-white bg-lime-600 px-4 py-3 md:py-3 text-lg leading-6 shadow-sm hover:bg-lime-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Iniciar
-          Sesión</button>
+        <button (click)="login()" type="button"
+          class="flex w-1/2 justify-center rounded-lg text-white bg-lime-600 px-4 py-3 md:py-3 text-lg leading-6 shadow-sm hover:bg-lime-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Iniciar Sesión
+        </button>
       </div>
 
     </form>
     <div class="flex justify-center mt-6">
 
-      <a href="#" class="flex w-1/2 justify-center rounded-lg bg-gray-500 px-3 py-3 md:py-3 text-lg leading-6 text-white shadow-sm hover:bg-gray-700 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600
+      <a (click)="login()" class="flex w-1/2 justify-center rounded-lg bg-gray-500 px-3 py-3 md:py-3 text-lg leading-6 text-white shadow-sm hover:bg-gray-700 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600
         ">Crear cuenta</a>
 
     </div>

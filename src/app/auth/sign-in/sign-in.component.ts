@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth-service.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { throwIfEmpty } from 'rxjs';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -11,7 +11,7 @@ export class SignInComponent implements OnInit{
 
   form!: FormGroup;
 
-  constructor(private auth:AuthService, private formBuilder: FormBuilder) {}
+  constructor( private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
