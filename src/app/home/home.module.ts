@@ -5,6 +5,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { MenuOptionsComponent } from './components/menu-options/menu-options.component';
 import { MenuOptionComponent } from './components/menu-option/menu-option.component';
 import { MenuTrackingComponent } from './components/menu-tracking/menu-tracking.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -17,7 +18,8 @@ import { MenuTrackingComponent } from './components/menu-tracking/menu-tracking.
     MenuTrackingComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     HomePageComponent,

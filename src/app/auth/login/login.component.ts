@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 
-import { User } from '../models/user'
+import { UserLogin } from '../models/userLogin'
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 })
 export class LoginComponent{
 
-  user: User = {};
+  user: UserLogin = {};
 
 
   loginForm = new FormGroup({

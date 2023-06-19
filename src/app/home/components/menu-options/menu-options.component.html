@@ -1,9 +1,8 @@
 <div class="container mx-auto max-w-md mt-10">
    <span class="flex justify-center text-center font-bold text-xl lg:text-xl">
-      Opciones
+      {{tittle}}
    </span>
-      <div class="grid grid-cols-2 lg:grid-cols-3 gap-3">
-         <app-menu-option></app-menu-option>
-         <app-menu-option></app-menu-option>
+      <div class="grid grid-cols-2 lg:grid gap-3 shrink-1" >
+         <app-menu-option *ngFor="let menuOption of menuOptions" [name]="menuOption.name" [icon]="menuOption.icon"></app-menu-option>
       </div>
 </div>
