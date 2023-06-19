@@ -10,10 +10,7 @@ export class MenuOptionsComponent {
   @Input()
   tittle: string = '';
 
-  @Input()
+  @Input() 
   menuOptions: menuOption[] = [];
-
-
-
 
 }

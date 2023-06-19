@@ -3,6 +3,6 @@
       {{tittle}}
    </span>
       <div class="grid grid-cols-2 lg:grid gap-3 shrink-1" >
-         <app-menu-option *ngFor="let menuOption of menuOptions" [name]="menuOption.name" [icon]="menuOption.icon"></app-menu-option>
+         <app-menu-option *ngFor="let menuOption of menuOptions" [name]="menuOption.name" [icon]="menuOption.icon" [routerLink]="[menuOption.path]"></app-menu-option>
       </div>
 </div>

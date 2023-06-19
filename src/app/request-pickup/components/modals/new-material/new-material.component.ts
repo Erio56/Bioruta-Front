@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { EventManager } from '@angular/platform-browser';
-import { Material } from 'src/app/request-pickup/models/material';
+import { Material } from 'src/app/request-pickup/interfaces/material';
 
 @Component({
   selector: 'app-new-material-component',

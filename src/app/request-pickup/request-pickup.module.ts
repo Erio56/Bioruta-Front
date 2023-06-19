@@ -9,6 +9,7 @@ import { AddressRegisterComponent } from './components/address-register/address-
 import { NewMaterialComponent } from './components/modals/new-material/new-material.component';
 import { FormsModule } from '@angular/forms';
 import { MaterialComponent } from './components/material/material.component';
+import { NewAddressComponent } from './components/modals/new-address/new-address.component';
 
 
 
@@ -21,6 +22,7 @@ import { MaterialComponent } from './components/material/material.component';
     AddressRegisterComponent,
     NewMaterialComponent,
     MaterialComponent,
+    NewAddressComponent,
   ],
   imports: [
     CommonModule,

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Recolection } from '../../models/recolection';
-import { Material } from '../../models/material';
+import { Material } from '../../interfaces/material';
+import { PickUp } from '../../interfaces/recolection';
 
 @Component({
   selector: 'app-pick-up-form',
@@ -8,8 +8,7 @@ import { Material } from '../../models/material';
 })
 export class PickUpFormComponent {
 
-
-  recolection: Recolection = {
+  recolection: PickUp = {
     address: '',
     time: '',
     materials:[]
