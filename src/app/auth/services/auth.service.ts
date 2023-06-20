@@ -12,6 +12,7 @@ import { User } from '../models/user';
 export class AuthService {
 
   private access_token$: BehaviorSubject<Token> = new BehaviorSubject<Token>({});
+  private isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   private user:User = {
     first_name: '',
@@ -21,7 +22,6 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  private isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   
   loginRequest(userLogin:UserLogin):Observable<boolean> {
       let url: string = 'http://127.0.0.1:8000/api/v1/user/token/';

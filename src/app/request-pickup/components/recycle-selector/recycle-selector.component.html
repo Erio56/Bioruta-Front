@@ -1,8 +1,7 @@
 <div class="px-6 py-9 flex overflow-y-hidden overflow-x-auto relative z-0">
 
-
    <ng-template ngIf="materials">
-      <div *ngFor="let material of materials">
+      <div class="pr-7" *ngFor="let material of materials">
          <app-material [currentMaterial]="material"></app-material>
       </div>
    </ng-template>
