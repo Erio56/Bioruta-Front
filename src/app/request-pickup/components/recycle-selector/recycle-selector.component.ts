@@ -41,5 +41,10 @@ export class RecycleSelectorComponent {
     console.log(this.newMaterialModal);
   }
   
+  newMaterialModalHandler(modalEvent:boolean):void{
+    this.newMaterialModal = modalEvent;
+  }
+
+
 }
   

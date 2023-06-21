@@ -23,4 +23,5 @@ export class PickUpFormComponent {
     console.log(this.recolection);
   }
 
+
 }

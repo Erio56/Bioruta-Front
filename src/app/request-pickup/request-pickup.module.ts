@@ -5,7 +5,6 @@ import { HomeModule } from '../home/home.module';
 import { PickUpFormComponent } from './components/pick-up-form/pick-up-form.component';
 import { RecycleSelectorComponent } from './components/recycle-selector/recycle-selector.component';
 import { AddressSelectorComponent } from './components/address-selector/address-selector.component';
-import { AddressRegisterComponent } from './components/address-register/address-register.component';
 import { NewMaterialComponent } from './components/modals/new-material/new-material.component';
 import { FormsModule } from '@angular/forms';
 import { MaterialComponent } from './components/material/material.component';
@@ -19,7 +18,6 @@ import { NewAddressComponent } from './components/modals/new-address/new-address
     PickUpFormComponent,
     RecycleSelectorComponent,
     AddressSelectorComponent,
-    AddressRegisterComponent,
     NewMaterialComponent,
     MaterialComponent,
     NewAddressComponent,

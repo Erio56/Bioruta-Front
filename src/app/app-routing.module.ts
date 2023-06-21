@@ -9,9 +9,9 @@ import { RequestPickupPageComponent } from './request-pickup/request-pickup-page
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: SignInComponent, pathMatch:'full' },
   { path: '', redirectTo: '/home', pathMatch:'full'},
   { path: 'home', component: HomePageComponent, canActivate:[authGuard] },
-  { path: 'register', component: SignInComponent },
   { path: 'tracking', component: TrackingPageComponent, canActivate:[authGuard] },
   { path: 'request-pickup', component: RequestPickupPageComponent, canActivate:[authGuard] },
   { path: '**', redirectTo: '/home' }

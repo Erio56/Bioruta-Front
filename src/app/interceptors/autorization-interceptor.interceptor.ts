@@ -8,7 +8,7 @@ import {
 import { Observable } from 'rxjs';
 import { ThisReceiver } from '@angular/compiler';
 import { AuthService } from '../auth/services/auth.service';
-import { Token } from '../auth/models/token';
+import { Token } from '../auth/interfaces/token';
 
 @Injectable()
 export class AutorizationInterceptorInterceptor implements HttpInterceptor {

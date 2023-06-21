@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { EventManager } from '@angular/platform-browser';
 import { Material } from 'src/app/request-pickup/interfaces/material';
 
 @Component({
@@ -15,12 +14,19 @@ export class NewMaterialComponent {
     weight:0,
     width:0
   };
-  @Output() newMaterialEvent= new EventEmitter<object>();
-
+  @Output() newMaterialEvent= new EventEmitter<Material>();
+  @Output() closeEvent= new EventEmitter<boolean>();
 
   close() {
     this.isOpen = false;
     this.newMaterialEvent.emit(this.material);
+    this.closeEvent.emit(false);
     console.log(this.material);
   }
+
+  abort() {
+    this.isOpen = false;
+    this.closeEvent.emit(false);
+  }
+
 } 

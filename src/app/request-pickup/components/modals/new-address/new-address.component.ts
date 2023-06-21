@@ -9,14 +9,20 @@ export class NewAddressComponent {
   
   @Input() isOpen: boolean = false;
   @Input() address:Address= {
-    address:''
+    address: ''
   };
-  @Output() newMaterialEvent= new EventEmitter<object>();
-
+  @Output() newAddressEvent = new EventEmitter<Address>();
+  @Output() closeEvent= new EventEmitter<boolean>();
 
   close() {
     this.isOpen = false;
-    this.newMaterialEvent.emit(this.address);
+    this.newAddressEvent.emit(this.address);
+    this.closeEvent.emit(false);
     console.log(this.address);
+  }
+
+  abort() {
+    this.isOpen = false;
+    this.closeEvent.emit(false);
   }
 }

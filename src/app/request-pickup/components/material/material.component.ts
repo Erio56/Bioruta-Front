@@ -28,4 +28,9 @@ export class MaterialComponent {
     this.materialModal = true;
   }
 
+  newMaterialModalHandler(modalEvent:boolean):void{
+    this.materialModal = modalEvent;
+  }
+
+
 }

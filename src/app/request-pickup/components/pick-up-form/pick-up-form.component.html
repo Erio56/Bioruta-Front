@@ -1,12 +1,18 @@
 <div class="container mx-auto max-w-md mt-10 px-5">
-   <div class="font-bold text-xl">Solicitud de recolección</div>
+   <div class="font-bold text-xl text-center">Solicitud de recolección</div>
    <form class="mt-4">
       <app-address-selector></app-address-selector>
-      <label for="time" class="block font-medium leading-6 text-gray-900 mt-3">Hora</label>
+      <label for="time" class="block font-semibold leading-6 text-gray-900 mt-3">Fecha y Hora</label>
       <div class="mt-2">
-         <input id="time" min="07:00" max="18:00" name="time" type="time" required
+         <input [(ngModel)]="recolection.time" id="time" min="07:00" max="18:00" name="time" type="datetime-local" required
             class="block w-full rounded-full border-0 py-3 bg-gray-200 p-4  text-gray-900 ring-1 ring-inset ring-transparent placeholder:text-gray-400 focus:ring-gray-00 sm:text-sm sm:leading-6">
       </div>
       <app-recycle-selector (materialSelectorEvent)="addMaterials($event)"></app-recycle-selector>
+
+      <div class="flex justify-center pt-3 md:pt-6 lg:pt-10">
+         <button (click)="createRecolection()" type="button"
+           class="flex w-1/2 justify-center rounded-lg text-white bg-lime-600 px-4 py-3 md:py-3 text-lg leading-6 shadow-sm hover:bg-lime-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Solicitar
+         </button>
+       </div>
    </form>
 </div>

@@ -12,4 +12,4 @@
    </div>
 </div>
 
-<app-new-material-component [material]="currentMaterial" [isOpen]="materialModal" (newMaterialEvent)="addMaterial($event)"></app-new-material-component>
+<app-new-material-component [material]="currentMaterial" [isOpen]="materialModal" (newMaterialEvent)="addMaterial($event)" (closeEvent)="newMaterialModalHandler($event)"></app-new-material-component>

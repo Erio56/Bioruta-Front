@@ -16,4 +16,4 @@
    
 </div>
 
-<app-new-material-component [material]="addNewMaterial()" [isOpen]="newMaterialModal" (newMaterialEvent)="addMaterialToMaterials($event)"></app-new-material-component>
+<app-new-material-component [material]="addNewMaterial()" [isOpen]="newMaterialModal" (newMaterialEvent)="addMaterialToMaterials($event)" (closeEvent)="newMaterialModalHandler($event)"></app-new-material-component>

@@ -1,9 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { UserLogin } from '../models/userLogin';
-import { Token } from '../models/token';
-import { User } from '../models/user';
+import { UserLogin } from '../interfaces/userLogin';
+import { Token } from '../interfaces/token';
+import { User } from '../interfaces/user';
 
 
 @Injectable({
