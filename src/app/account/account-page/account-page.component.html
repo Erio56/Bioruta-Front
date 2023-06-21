@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+
+<app-menu-options  [tittle]="'Gestión de la cuenta'" [menuOptions]="[{name: 'Agregar dirección', icon: '../../../../assets/Bioruta_logo.jpg', path: '/request-pickup' },{name: 'Cambiar contraseña', icon: '../../../../assets/Bioruta_logo.jpg', path: '/request-pickup' }]"></app-menu-options>
+
+<div class="container mx-auto max-w-md mt-10">
+   <div class="flex justify-center">
+      <button (click)="logOut()" class="flex w-1/2 justify-center rounded-lg text-white bg-lime-600 px-4 py-3 md:py-3 text-lg leading-6 shadow-sm hover:bg-lime-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+
+         Cerrar sesión
+      </button>
+   </div>
+</div>

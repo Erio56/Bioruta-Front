@@ -23,7 +23,8 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     HomePageComponent,
-    NavbarComponent
+    NavbarComponent,
+    MenuOptionsComponent
   ]
 })
 export class HomeModule { }

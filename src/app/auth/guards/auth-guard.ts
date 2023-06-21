@@ -11,11 +11,15 @@ export const authGuard = (
     const auth = inject(AuthService);
     const nav = inject(Router);
 
-    if(auth.IsLoggedIn){
-      return true;
-    }
-
-    nav.navigate(['login']);
-    return false;
+    auth.IsLoggedIn.subscribe(
+      (isLoggedIn:boolean)=>{
+        if(isLoggedIn){
+          return true;
+        }else{
+          nav.navigate(['login']);
+          return false;
+        }
+      }
+    )
   };
 

@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { UserLogin } from '../interfaces/userLogin';
 import { Token } from '../interfaces/token';
 import { User } from '../interfaces/user';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -14,13 +15,13 @@ export class AuthService {
   private access_token$: BehaviorSubject<Token> = new BehaviorSubject<Token>({});
   private isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  private user:User = {
+  private user:User | null = {
     first_name: '',
     last_name: '',
     email: ''
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private nav:Router) { }
 
   
   loginRequest(userLogin:UserLogin):Observable<boolean> {
@@ -36,6 +37,15 @@ export class AuthService {
     )
       return this.isLoggedIn$.asObservable();
     }
+
+
+  logOut(){
+    this.user = null;
+    localStorage.clear();
+    this.access_token$.next({});
+    this.isLoggedIn$.next(false);
+    this.nav.navigate(['login']);
+  }
 
   get tokenObservable() : Observable<Token> {
     return this.access_token$.asObservable();
@@ -77,5 +87,6 @@ export class AuthService {
   get userInSession(){
     return this.user;
   }
+
 
 } 

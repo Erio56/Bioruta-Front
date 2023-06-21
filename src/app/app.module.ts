@@ -12,6 +12,7 @@ import { RequestPickupModule } from './request-pickup/request-pickup.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AutorizationInterceptorInterceptor } from './interceptors/autorization-interceptor.interceptor';
+import { AccountModule } from './account/account.module';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { AutorizationInterceptorInterceptor } from './interceptors/autorization-
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    AccountModule
     
   ],
   providers: [
