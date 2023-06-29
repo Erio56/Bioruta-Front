@@ -11,8 +11,9 @@ import { TrackingModule } from './tracking/tracking.module';
 import { RequestPickupModule } from './request-pickup/request-pickup.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { AutorizationInterceptorInterceptor } from './interceptors/autorization-interceptor.interceptor';
+import { JWTInterceptor } from './interceptors/autorization-interceptor.interceptor';
 import { AccountModule } from './account/account.module';
+import { PickupHistoryModule } from './pickup-history/pickup-history.module';
 
 
 @NgModule({
@@ -36,13 +37,13 @@ import { AccountModule } from './account/account.module';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    AccountModule
-    
+    AccountModule,
+    PickupHistoryModule
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: AutorizationInterceptorInterceptor,
+      useClass: JWTInterceptor,
       multi: true
     }
   ],

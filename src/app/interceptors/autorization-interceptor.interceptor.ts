@@ -3,35 +3,30 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpErrorResponse
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { ThisReceiver } from '@angular/compiler';
-import { AuthService } from '../auth/services/auth.service';
-import { Token } from '../auth/interfaces/token';
+import { Observable, catchError, throwError } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable()
-export class AutorizationInterceptorInterceptor implements HttpInterceptor {
+export class JWTInterceptor implements HttpInterceptor {
 
-  accessToken: string = '';
+  constructor(private nav: Router) {}
 
-  constructor(private auth: AuthService) {
-    this.auth.tokenObservable.subscribe(
-      (token:Token)=>{
-        if(token.refresh){
-          this.accessToken = token.refresh;
-        }
-      }
-    )
-  }
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
 
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if(this.accessToken){
-      request = request.clone({
-        setHeaders:{
-          Authorization: `Bearer ${this.accessToken}`
-        }
-      });
+    let token: string| null = localStorage.getItem('access');
+    console.log("REQUEST INTERCEPTED", request);
+
+
+    if(token){
+      let req = request.clone({
+        setHeaders: { Authorization: `Bearer ${token}`}
+      })
+      console.log("intercepted with token ", token);
+      console.log(req);
+      return next.handle(req);
     }
     return next.handle(request);
   }

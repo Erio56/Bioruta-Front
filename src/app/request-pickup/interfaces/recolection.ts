@@ -1,7 +1,9 @@
 import { Material } from "./material"
 
 export interface PickUp {
-   address: string,
-   time: string,
+   address?: string,
+   state: string,
+   timeToPickUp: string,
+   requestedDate: string,
    materials: Material[]
 }

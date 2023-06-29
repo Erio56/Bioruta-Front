@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common'; 
 import { TrackingPageComponent } from './tracking-page/tracking-page.component';
 import { NavbarComponent } from '../home/components/navbar/navbar.component';
 import { HomeModule } from '../home/home.module';
@@ -14,7 +14,8 @@ import { TrackingHistorysComponent } from './components/tracking-history/trackin
         TrackingHistorysComponent
     ],
     exports: [ 
-      TrackingPageComponent,
+        TrackingPageComponent,
+        TrackingHistorysComponent
     ],
     imports: [
         CommonModule,

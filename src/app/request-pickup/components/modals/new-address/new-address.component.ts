@@ -9,6 +9,7 @@ export class NewAddressComponent {
   
   @Input() isOpen: boolean = false;
   @Input() address:Address= {
+    id: '',
     address: ''
   };
   @Output() newAddressEvent = new EventEmitter<Address>();
